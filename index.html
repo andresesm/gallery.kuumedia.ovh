@@ -13,50 +13,44 @@
 
     <!-- Masonry Layout -->
     <script src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
-    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 
     <!-- Lightbox2 JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 
-    <script src="/script.js"></script>
+    <!-- ImagesLoaded -->
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 
     <style>
-        /* Evitar que las imágenes se expandan */
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* Diseño tipo Pinterest */
-        .masonry {
-            column-count: 1; /* Móviles */
-            column-gap: 16px; /* Espacio entre columnas */
-        }
-
-        @media (min-width: 640px) {
-            .masonry { column-count: 2; } /* Tablets */
-        }
-
-        @media (min-width: 1024px) {
-            .masonry { column-count: 3; } /* Escritorios */
-        }
-
-        .masonry-item {
-            display: inline-block;
-            width: 100%;
-            margin-bottom: 16px; /* Espacio entre imágenes */
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
         .gallery-img {
             width: 100%;
             height: auto;
             border-radius: 8px;
         }
-    </style>
 
-    <link rel="icon" href="img/kuumedia.svg" type="image/kuu-icon">
+        .masonry {
+            column-count: 1;
+            column-gap: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .masonry {
+                column-count: 2;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .masonry {
+                column-count: 3;
+            }
+        }
+
+        .masonry-item {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 1rem;
+            break-inside: avoid;
+        }
+    </style>
 </head>
 <body class="bg-gray-100">
 
@@ -118,21 +112,8 @@
                 imagesLoaded(grid, function () {
                     new Masonry(grid, {
                         itemSelector: '.masonry-item',
-                        columnWidth: '.masonry-item',
                         percentPosition: true
                     });
-                });
-            }
-        });
-
-        // Recalcular Masonry cuando el usuario cambia de tamaño la ventana
-        window.addEventListener('resize', function () {
-            var grid = document.querySelector('.masonry');
-            if (grid) {
-                new Masonry(grid, {
-                    itemSelector: '.masonry-item',
-                    columnWidth: '.masonry-item',
-                    percentPosition: true
                 });
             }
         });
