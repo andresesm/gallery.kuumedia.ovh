@@ -11,87 +11,112 @@
     <!-- Lightbox2 CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
 
+    <!-- Masonry CSS -->
     <style>
-        /* Estilo de las imágenes */
         .gallery-img {
             width: 100%;
             border-radius: 8px;
             object-fit: cover;
             display: block;
         }
-        /* Espaciado entre imágenes */
-        .col {
-            margin-bottom: 15px;
+
+        /* Evitar espacios en Masonry */
+        .masonry {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .masonry-item {
+            width: calc(33.33% - 10px); /* Ajuste para 3 columnas con espacios */
+            break-inside: avoid;
+        }
+
+        @media (max-width: 1024px) {
+            .masonry-item {
+                width: calc(50% - 10px); /* 2 columnas en pantallas medianas */
+            }
+        }
+
+        @media (max-width: 640px) {
+            .masonry-item {
+                width: 100%; /* 1 columna en móviles */
+            }
         }
     </style>
 </head>
 <body class="bg-light">
 
-    <body class="bg-light">
-        <div class="container py-4">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 masonry-grid">
-                <div class="col masonry-item">
-                    <a href="/img/qwe (1).jpg" data-lightbox="gallery">
-                        <img src="/img/qwe (1).jpg" class="gallery-img">
-                    </a>
-                </div>
-                <div class="col masonry-item">
-                    <a href="/img/qwe (2).jpg" data-lightbox="gallery">
-                        <img src="/img/qwe (2).jpg" class="gallery-img">
-                    </a>
-                </div>
-                <div class="col masonry-item">
-                    <a href="/img/qwe (3).jpg" data-lightbox="gallery">
-                        <img src="/img/qwe (3).jpg" class="gallery-img">
-                    </a>
-                </div>
-                <div class="col masonry-item">
-                    <a href="/img/qwe (4).jpg" data-lightbox="gallery">
-                        <img src="/img/qwe (4).jpg" class="gallery-img">
-                    </a>
-                </div>
-                <div class="col masonry-item">
-                    <a href="/img/qwe (5).jpg" data-lightbox="gallery">
-                        <img src="/img/qwe (5).jpg" class="gallery-img">
-                    </a>
-                </div>
-                <div class="col masonry-item">
-                    <a href="/img/qwe (6).jpg" data-lightbox="gallery">
-                        <img src="/img/qwe (6).jpg" class="gallery-img">
-                    </a>
-                </div>
+    <div class="container py-4">
+        <div class="masonry">
+            <div class="masonry-item">
+                <a href="/img/qwe (1).jpg" data-lightbox="gallery">
+                    <img src="/img/qwe (1).jpg" class="gallery-img">
+                </a>
+            </div>
+            <div class="masonry-item">
+                <a href="/img/qwe (2).jpg" data-lightbox="gallery">
+                    <img src="/img/qwe (2).jpg" class="gallery-img">
+                </a>
+            </div>
+            <div class="masonry-item">
+                <a href="/img/qwe (3).jpg" data-lightbox="gallery">
+                    <img src="/img/qwe (3).jpg" class="gallery-img">
+                </a>
+            </div>
+            <div class="masonry-item">
+                <a href="/img/qwe (4).jpg" data-lightbox="gallery">
+                    <img src="/img/qwe (4).jpg" class="gallery-img">
+                </a>
+            </div>
+            <div class="masonry-item">
+                <a href="/img/qwe (5).jpg" data-lightbox="gallery">
+                    <img src="/img/qwe (5).jpg" class="gallery-img">
+                </a>
+            </div>
+            <div class="masonry-item">
+                <a href="/img/qwe (6).jpg" data-lightbox="gallery">
+                    <img src="/img/qwe (6).jpg" class="gallery-img">
+                </a>
+            </div>
+            <div class="masonry-item">
+                <a href="/img/qwe (7).jpg" data-lightbox="gallery">
+                    <img src="/img/qwe (7).jpg" class="gallery-img">
+                </a>
+            </div>
+            <div class="masonry-item">
+                <a href="/img/qwe (8).jpg" data-lightbox="gallery">
+                    <img src="/img/qwe (8).jpg" class="gallery-img">
+                </a>
+            </div>
+            <div class="masonry-item">
+                <a href="/img/qwe (9).jpg" data-lightbox="gallery">
+                    <img src="/img/qwe (9).jpg" class="gallery-img">
+                </a>
             </div>
         </div>
-    
+    </div>
 
- <!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Lightbox2 JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <!-- Lightbox2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 
-<!-- Masonry & ImagesLoaded -->
-<script src="js/imagesLoaded.pkgd.min.js"></script>
-<script src="js/masonry.pkgd.min.js"></script>
+    <!-- Masonry JS -->
+    <script src="js/masonry.pkgd.min.js"></script>
 
-<!-- Evita duplicaciones al inicializar Masonry -->
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        var grid = document.querySelector('.masonry-grid');
-
-        if (grid && !grid.classList.contains("masonry-initialized")) {
+    <!-- Script para inicializar Masonry -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var grid = document.querySelector('.masonry');
             imagesLoaded(grid, function () {
                 new Masonry(grid, {
                     itemSelector: '.masonry-item',
-                    columnWidth: '.masonry-item',
                     percentPosition: true
                 });
             });
-            grid.classList.add("masonry-initialized");
-        }
-    });
-</script>
-
-
+        });
+    </script>
 </body>
 </html>
