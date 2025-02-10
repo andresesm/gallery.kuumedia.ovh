@@ -20,17 +20,27 @@ body {
     padding: 30px; /* Espacio interior amplio */
 }
 
+/* Estilo para el contenedor de la galería */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px; /* Espaciado interno alrededor de la galería */
+    gap: 20px; /* Espacio entre las imágenes */
+}
 
+/* Estilo para cada ítem de la galería */
 .gallery-item {
-    width: 100%;
-    max-width: 400px; /* Tamaño máximo de las imágenes */
-    border-radius: 10px;
+    flex: 1 1 calc(33.333% - 40px); /* Tres imágenes por fila con espacio entre ellas */
+    max-width: calc(33.333% - 40px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor de las imágenes */
+    border-radius: 10px; /* Bordes redondeados */
     overflow: hidden;
 }
 
+/* Estilo para las imágenes */
 .gallery-item img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 10px;
 }
