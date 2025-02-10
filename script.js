@@ -9,10 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 percentPosition: true
             });
 
-            // Forzar realineación después de cada imagen cargada
-            imagesLoaded(grid).on('progress', function () {
+            // 🔥 SOLUCIÓN: Recalcular Masonry después de 500ms
+            setTimeout(() => {
                 msnry.layout();
-            });
+            }, 500);
         });
     }
 });
