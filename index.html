@@ -14,8 +14,14 @@
     <!-- Masonry Layout -->
     <script src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
 
-    <!-- Lightbox2 JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<!-- Lightbox2 CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+
+<!-- Lightbox2 JS con defer -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+<link rel="icon" href="img/kuumedia.svg" type="image/svg+xml">
+
 
     <!-- ImagesLoaded -->
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
@@ -118,5 +124,20 @@
             }
         });
     </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        if (typeof lightbox !== "undefined") {
+            lightbox.option({
+                'resizeDuration': 200,
+                'wrapAround': true
+            });
+        } else {
+            console.error("Error: Lightbox no se ha cargado correctamente.");
+        }
+    });
+</script>
+
+
 </body>
 </html>
