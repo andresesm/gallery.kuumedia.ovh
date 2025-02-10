@@ -11,8 +11,12 @@
     <!-- Lightbox2 CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
 
-    <!-- Masonry CSS -->
     <style>
+        /* Estilo general */
+        body {
+            background: #f5f5f5;
+        }
+
         .gallery-img {
             width: 100%;
             border-radius: 8px;
@@ -20,7 +24,7 @@
             display: block;
         }
 
-        /* Evitar espacios en Masonry */
+        /* Masonry grid */
         .masonry {
             display: flex;
             flex-wrap: wrap;
@@ -28,24 +32,25 @@
         }
         
         .masonry-item {
-            width: calc(33.33% - 10px); /* Ajuste para 3 columnas con espacios */
+            width: calc(33.33% - 10px);
             break-inside: avoid;
+            overflow: hidden;
         }
 
         @media (max-width: 1024px) {
             .masonry-item {
-                width: calc(50% - 10px); /* 2 columnas en pantallas medianas */
+                width: calc(50% - 10px);
             }
         }
 
         @media (max-width: 640px) {
             .masonry-item {
-                width: 100%; /* 1 columna en móviles */
+                width: 100%;
             }
         }
     </style>
 </head>
-<body class="bg-light">
+<body>
 
     <div class="container py-4">
         <div class="masonry">
@@ -103,13 +108,17 @@
     <!-- Lightbox2 JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 
-    <!-- Masonry JS -->
+    <!-- Masonry JS (Local) -->
     <script src="js/masonry.pkgd.min.js"></script>
+
+    <!-- ImagesLoaded (Evita espacios en blanco) -->
+    <script src="js/imagesloaded.pkgd.min.js"></script>
 
     <!-- Script para inicializar Masonry -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             var grid = document.querySelector('.masonry');
+
             imagesLoaded(grid, function () {
                 new Masonry(grid, {
                     itemSelector: '.masonry-item',
