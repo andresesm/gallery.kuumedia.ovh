@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var elem = document.querySelector('.gallery');
-    var msnry = new Masonry(elem, {
+    var grid = document.querySelector('.gallery');
+    new Masonry(grid, {
         itemSelector: '.gallery-item',
         columnWidth: '.gallery-item',
         percentPosition: true

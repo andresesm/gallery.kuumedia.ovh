@@ -5,42 +5,42 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif; /* Tipografía sencilla y moderna */
+    font-family: 'Arial', sans-serif;
     font-size: 16px;
     line-height: 1.5;
     background-color: #fff;
-    color: #333; /* Texto oscuro */
+    color: #333;
 }
 
+/* Contenedor de la galería */
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+/* Galería Masonry */
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px; /* Ampliamos el espacio entre imágenes */
-    justify-content: center;
-    padding: 30px; /* Espacio interior amplio */
+    gap: 15px;
+    max-width: 1200px;
 }
 
-/* Estilo para el contenedor de la galería */
-.gallery-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px; /* Espaciado interno alrededor de la galería */
-    gap: 20px; /* Espacio entre las imágenes */
-}
-
-/* Estilo para cada ítem de la galería */
+/* Ítems de la galería */
 .gallery-item {
-    flex: 1 1 calc(33.333% - 40px); /* Tres imágenes por fila con espacio entre ellas */
-    max-width: calc(33.333% - 40px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor de las imágenes */
-    border-radius: 10px; /* Bordes redondeados */
+    width: calc(33.333% - 10px); /* 3 columnas */
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
     overflow: hidden;
+    background: #fff;
 }
 
-/* Estilo para las imágenes */
+/* Imágenes dentro de la galería */
 .gallery-item img {
     width: 100%;
     height: auto;
     display: block;
+    border-radius: 10px;
 }
