@@ -18,25 +18,33 @@
     <!-- Lightbox2 JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 
+    <script src="/script.js"></script>
+
     <style>
-        /* Ajuste para el efecto Pinterest */
+        /* Evitar que las imágenes se expandan */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Diseño tipo Pinterest */
         .masonry {
-            column-count: 1; /* 1 columna en móvil */
+            column-count: 1; /* Móviles */
             column-gap: 16px; /* Espacio entre columnas */
         }
 
         @media (min-width: 640px) {
-            .masonry { column-count: 2; } /* 2 columnas en tablets */
+            .masonry { column-count: 2; } /* Tablets */
         }
 
         @media (min-width: 1024px) {
-            .masonry { column-count: 3; } /* 3 columnas en pantallas grandes */
+            .masonry { column-count: 3; } /* Escritorios */
         }
 
         .masonry-item {
             display: inline-block;
             width: 100%;
-            margin-bottom: 16px; /* Espacio entre filas */
+            margin-bottom: 16px; /* Espacio entre imágenes */
             border-radius: 8px;
             overflow: hidden;
         }
@@ -113,6 +121,18 @@
                         columnWidth: '.masonry-item',
                         percentPosition: true
                     });
+                });
+            }
+        });
+
+        // Recalcular Masonry cuando el usuario cambia de tamaño la ventana
+        window.addEventListener('resize', function () {
+            var grid = document.querySelector('.masonry');
+            if (grid) {
+                new Masonry(grid, {
+                    itemSelector: '.masonry-item',
+                    columnWidth: '.masonry-item',
+                    percentPosition: true
                 });
             }
         });
