@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
         imagesLoaded(grid, function () {
             new Masonry(grid, {
                 itemSelector: '.masonry-item',
-                columnWidth: '.masonry-item',
+                columnWidth: '.gallery-sizer',
                 percentPosition: true
             });
         });
@@ -18,7 +18,7 @@ window.addEventListener('resize', function () {
     if (grid) {
         new Masonry(grid, {
             itemSelector: '.masonry-item',
-            columnWidth: '.masonry-item',
+            columnWidth: '.gallery-sizer',
             percentPosition: true
         });
     }
