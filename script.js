@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 percentPosition: true
             });
 
-            // 🔥 SOLUCIÓN: Recalcular Masonry después de 500ms
+            // Forzar reordenamiento después de un tiempo
             setTimeout(() => {
                 msnry.layout();
             }, 500);
