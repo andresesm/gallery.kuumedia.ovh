@@ -6,38 +6,35 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    background-color: #fff;
-    color: #333;
+    background-color: #f5f5f5;
 }
 
 /* Contenedor de la galería */
-.gallery-container {
-    display: flex;
-    justify-content: center;
-    padding: 30px;
+.gallery {
+    column-count: 3; /* Tres columnas estilo Pinterest */
+    column-gap: 20px;
+    max-width: 1200px;
+    margin: auto;
 }
 
-/* Galería Masonry */
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    max-width: 1200px;
+/* Elemento fantasma para ayudar a Masonry */
+.gallery-sizer {
+    width: 33.33%;
 }
 
 /* Ítems de la galería */
 .gallery-item {
-    width: calc(33.333% - 10px); /* 3 columnas */
-    max-width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+    break-inside: avoid;
     border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background: #fff;
 }
 
-/* Imágenes dentro de la galería */
+/* Imágenes */
 .gallery-item img {
     width: 100%;
     height: auto;

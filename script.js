@@ -1,8 +1,12 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     var grid = document.querySelector('.gallery');
-    new Masonry(grid, {
-        itemSelector: '.gallery-item',
-        columnWidth: '.gallery-item',
-        percentPosition: true
+
+    // Iniciar Masonry después de que todas las imágenes se hayan cargado
+    imagesLoaded(grid, function () {
+        new Masonry(grid, {
+            itemSelector: '.gallery-item',
+            columnWidth: '.gallery-sizer',
+            percentPosition: true
+        });
     });
 });

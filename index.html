@@ -6,22 +6,25 @@
     <title>Galería Masonry</title>
 
     <!-- TailwindCSS -->
-    <script src="https://cdn.tailwindcss.com"></script>    
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Lightbox2 CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
 
-    <!-- Masonry JS -->
+    <!-- Masonry -->
     <script src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
-
-    <!-- Lightbox2 JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div class="gallery-container">
-        <div class="gallery" data-masonry='{"itemSelector": ".gallery-item", "columnWidth": ".gallery-item", "percentPosition": true}'>
+<body class="bg-gray-100 p-6">
+    
+    <div class="max-w-6xl mx-auto">
+        <div class="gallery grid gap-4" data-masonry='{ "itemSelector": ".gallery-item", "columnWidth": ".gallery-sizer", "percentPosition": true }'>
+            
+            <!-- Elemento fantasma para calcular columnas -->
+            <div class="gallery-sizer"></div>
+
+            <!-- Imágenes de la galería -->
             <div class="gallery-item">
                 <a href="/img/qwe (1).jpg" data-lightbox="gallery" data-title="Imagen 1">
                     <img src="/img/qwe (1).jpg" alt="Imagen 1">
@@ -67,9 +70,15 @@
                     <img src="/img/qwe (9).jpg" alt="Imagen 9">
                 </a>
             </div>
+            
         </div>
     </div>
 
+    <!-- Lightbox2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    
+    <!-- Script personalizado -->
     <script src="script.js"></script>
+
 </body>
 </html>
