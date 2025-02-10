@@ -10,12 +10,14 @@ body {
 }
 
 /* Contenedor de la galería */
-.gallery {
-    column-count: 3; /* Tres columnas estilo Pinterest */
-    column-gap: 20px;
-    max-width: 1200px;
-    margin: auto;
+.gallery-img {
+    width: 100%;
+    height: auto;
+    max-height: 150px; /* Antes 350px, ahora 3/4 más pequeña */
+    object-fit: cover;
+    border-radius: 8px;
 }
+
 
 /* Elemento fantasma para ayudar a Masonry */
 .gallery-sizer {
