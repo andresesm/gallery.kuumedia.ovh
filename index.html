@@ -78,11 +78,13 @@
             var grid = document.querySelector('.grid-masonry');
 
             imagesLoaded(grid, function () {
-                new Masonry(grid, {
-                    itemSelector: '.gallery-item',
-                    percentPosition: true,
-                    horizontalOrder: true
-                });
+                setTimeout(function () { 
+                    new Masonry(grid, {
+                        itemSelector: '.gallery-item',
+                        percentPosition: true,
+                        horizontalOrder: true
+                    });
+                }, 500); // Esperar 500ms para asegurar la carga
             });
         });
     </script>
