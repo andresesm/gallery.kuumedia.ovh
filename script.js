@@ -3,23 +3,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (grid) {
         imagesLoaded(grid, function () {
-            new Masonry(grid, {
+            var msnry = new Masonry(grid, {
                 itemSelector: '.masonry-item',
                 columnWidth: '.gallery-sizer',
                 percentPosition: true
             });
-        });
-    }
-});
 
-// Recalcular Masonry cuando el usuario cambia el tamaño de la ventana
-window.addEventListener('resize', function () {
-    var grid = document.querySelector('.masonry');
-    if (grid) {
-        new Masonry(grid, {
-            itemSelector: '.masonry-item',
-            columnWidth: '.gallery-sizer',
-            percentPosition: true
+            // Forzar realineación después de cada imagen cargada
+            imagesLoaded(grid).on('progress', function () {
+                msnry.layout();
+            });
         });
     }
 });

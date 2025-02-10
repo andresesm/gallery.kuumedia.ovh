@@ -19,18 +19,17 @@ body {
     width: 33.33%; /* Tamaño de columna base */
 }
 
-/* Ítems de la galería */
+/* Asegurar que los items se ajusten bien */
 .masonry-item {
+    display: block;
     width: 100%;
-    margin-bottom: 20px;
-    break-inside: avoid;
+    margin-bottom: 15px;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background: #fff;
 }
 
-/* Imágenes */
 .masonry-item img {
     width: 100%;
     height: auto;
