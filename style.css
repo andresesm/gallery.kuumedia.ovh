@@ -5,25 +5,32 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
+    font-family: 'Arial', sans-serif; /* Tipografía sencilla y moderna */
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #fff;
+    color: #333; /* Texto oscuro */
 }
 
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 30px; /* Ampliamos el espacio entre imágenes */
     justify-content: center;
-    padding: 20px;
+    padding: 30px; /* Espacio interior amplio */
 }
 
+
 .gallery-item {
-    width: 300px; /* Puedes ajustar el tamaño de las imágenes */
-    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px; /* Tamaño máximo de las imágenes */
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .gallery-item img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    display: block;
+    border-radius: 10px;
 }
